@@ -166,6 +166,7 @@ git_toplevel() {
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment "$AGNOSTER_CONTEXT_BG" "$AGNOSTER_CONTEXT_FG" "%(!.%{%F{$AGNOSTER_STATUS_ROOT_FG}%}.)%n@%m"
+    #prompt_segment cyan default "%(!.%{%F{yellow}%}.)%n@%m"
   fi
 }
 
@@ -364,11 +365,12 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
-  prompt_aws
+#  prompt_aws
   prompt_terraform
+  #prompt_aws
   prompt_context
   prompt_dir
-  prompt_git
+  #prompt_git
   prompt_bzr
   prompt_hg
   prompt_end
